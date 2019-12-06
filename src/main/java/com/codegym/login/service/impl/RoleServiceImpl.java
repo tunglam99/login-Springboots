@@ -4,7 +4,9 @@ import com.codegym.login.model.Role;
 import com.codegym.login.repository.RoleRepository;
 import com.codegym.login.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RoleServiceImpl implements RoleService {
 
     @Autowired
