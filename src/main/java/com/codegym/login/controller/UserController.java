@@ -8,9 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin("*")
@@ -37,4 +35,15 @@ public class UserController {
         Iterable<User> users = userService.findAll();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
+
+    /*@PostMapping("/register")
+    public ResponseEntity<User> createUser(@RequestBody User user){
+        Iterable<User> users = userService.findAll();
+        for (User currentUser: users) {
+            if (currentUser.getUserName().equals(user.getUserName())){
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+        }
+    }*/
+
 }
